@@ -1,0 +1,13 @@
+@import 'src/components/style/foundation/typography';
+@import 'src/components/style/foundation/colors';
+
+.AppContainer {
+  font-family: font-family(base);
+}
+
+.App {
+  padding: 1em;
+  margin: auto;
+  max-width: 1000px;
+  min-height: 100vh;
+}

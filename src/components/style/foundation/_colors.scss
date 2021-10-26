@@ -1,0 +1,51 @@
+// COLORS
+// -----------------------------------------------------------------------------
+
+// stylelint-disable color-no-hex, no-indistinguishable-colors, function-max-empty-lines, value-list-max-empty-lines
+$color-palette-data: (
+  background: (
+    light: #FFFFFF,
+    dark: #181818,
+  ),
+  accent: (
+    base: rgb(27, 149, 224),
+    dark: rgb(34, 171, 255)
+  ),
+  accent-2: (
+    base: #FFCA04,
+    pale: #ffe07d,
+  ),
+  green: (
+    base: #4caf50,
+  ),
+  gray: (
+    darker: #222222,
+    dark: #555555,
+    base: #777676,
+    baseDark: #a7a7a7,
+    light: #DDDDDD,
+    lighter: #EEEEEE,
+  )
+);
+
+
+/// Returns the color value for a given color name and group.
+///
+/// @param {String} $hue - The color's hue.
+/// @param {String} $value - The darkness/lightness of the color. Defaults to base.
+/// appear. Applies a multiply filter to ensure appropriate contrast.
+/// @return {Color} The color value.
+
+@function color($hue, $value: base) {
+  $fetched-color: map-get(map-get($color-palette-data, $hue), $value);
+
+  @if map-has-key($color-palette-data, $fetched-color) {
+    $fetched-color: map-get(map-get($color-palette-data, $fetched-color), $value);
+  }
+
+  @if type-of($fetched-color) == color {
+    @return $fetched-color;
+  } @else {
+    @error 'Color `#{$hue} - #{$value}` not found. Available colors: #{available-names($color-palette-data)}';
+  }
+}

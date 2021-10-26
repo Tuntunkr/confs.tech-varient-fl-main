@@ -1,0 +1,70 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "prettier",
+    "jsx-a11y",
+    "import"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "import/order": ["warn", {
+      "alphabetize": {
+        "order": "asc"
+      },
+      "pathGroups": [
+        {
+          "pattern": "src/**",
+          "group": "internal",
+          "position": "after"
+        },
+        {
+          "pattern": "snap-redux/**",
+          "group": "internal",
+          "position": "before"
+        },
+        {
+          "pattern": "stories/**",
+          "group": "internal"
+        }
+      ],
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "unknown"],
+      "newlines-between": "always"
+    }],
+    "import/no-named-as-default-member": "off",
+    "import/extensions": ["off", "never"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "packageDir": ["./"],
+        "devDependencies": true
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "prettier/prettier": 0,
+    "jsx-a11y/no-onchange": "off",
+    "sort-class-members/sort-class-members": "off",
+    "react/prop-types": "off",
+    "array-callback-return": "off",
+    "no-process-env": "off",
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "function-paren-newline": "off",
+    "react/no-typos": "off",
+    "react/no-unused-state": "off"
+  }
+}

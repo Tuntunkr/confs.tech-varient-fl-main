@@ -1,0 +1,12 @@
+@import 'src/components/style/foundation/mixins';
+@import 'src/components/style/foundation/typography';
+@import 'src/components/style/foundation/colors';
+
+.Link {
+  @include link();
+
+  &:hover,
+  &.Selected {
+    @include link--hover();
+  }
+}

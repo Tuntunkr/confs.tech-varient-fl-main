@@ -1,0 +1,47 @@
+@import 'src/components/style/foundation/spacing';
+@import 'src/components/style/foundation/colors';
+
+.ConferenceList {
+  width: 100%;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.Year {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: spacing(loose) 0 spacing(base) 0;
+  position: sticky;
+  top: 0;
+  padding: spacing(base) 0;
+  z-index: 10;
+  border-bottom: 1px solid color(grey, lighter);
+  background-color: color(background, light);
+
+  :global(.theme--dark) & {
+    border-bottom: 1px solid color(grey, darker);
+    background-color: color(background, dark);
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.AddConference {
+  text-align: right;
+  > div {
+    margin-bottom: 0.5em;
+  }
+}
+
+.NoResults {
+  text-align: center;
+  font-size: 0.9em;
+  margin: spacing(extra-loose);
+}

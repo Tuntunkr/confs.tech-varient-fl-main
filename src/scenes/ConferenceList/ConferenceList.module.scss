@@ -1,0 +1,68 @@
+@import 'src/components/style/foundation/mixins';
+@import 'src/components/style/foundation/typography';
+@import 'src/components/style/foundation/colors';
+@import 'src/components/style/foundation/spacing';
+@import 'src/components/style/foundation/media-queries';
+
+.Loader {
+  text-align: center;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.HeaderLinks {
+  margin: 0 0 spacing(loose) 0;
+
+  a {
+    display: block;
+    margin: 0 spacing(loose) spacing(tight) 0;
+
+    @include media($media-query--tablet-up) {
+      display: inline;
+    }
+  }
+}
+
+.CurrentRefinements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HitsCount {
+  font-size: font-size(body, smaller);
+  margin: 0;
+}
+
+.LinkGroup button,
+.LinkGroup a {
+  margin: 0 spacing(loose) 0 0;
+}
+
+.OnlineRadios {
+  margin-bottom: spacing(base);
+  display: flex;
+
+  input {
+    width: auto;
+  }
+
+  label {
+    margin-right: spacing(loose);
+    cursor: pointer;
+  }
+
+  input {
+    margin: 0 spacing(tight) 0 0;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+  }
+}

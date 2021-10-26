@@ -1,0 +1,15 @@
+@import 'src/components/style/foundation/spacing';
+@import 'src/components/style/foundation/colors';
+
+.Card {
+  padding: spacing(loose);
+  border-radius: 4px;
+  border: 1px solid color(gray, lighter);
+  box-shadow: 0px 0px 10px color(gray, lighter);
+  margin-bottom: spacing(loose);
+
+  :global(.theme--dark) & {
+    border-color: color(gray, darker);
+    box-shadow: 0px 0px 10px color(gray, darker);
+  }
+}
